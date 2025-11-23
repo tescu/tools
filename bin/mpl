@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Play random music files using MPV, with optional parsing abilities
+shopt -s globstar
+
+# Check if mpl is already running
+if [ -d /tmp/mpl* ]; then
+	printf "%s\n" "mpl is already running!"
+	exit 1
+fi
+
+# tmp directory for files
+tmpd="$(mktemp -d /tmp/mpl.XXXX)"
+printf "%s" "$$" > "$tmpd/pid"
+
+cleanup() {
+	# Remove clutter and other stuff
+	echo 'done'
+	rm -r "$tmpd"
+	exit 0
+}
+# Run cleanup when terminated
+trap cleanup SIGTERM EXIT
+
+while true; do
+	# Find all music files ending in .mp3 or .m4a, then choose one at random
+	track="$(find . -type f -name '*.mp3' -o -name '*.m4a' | shuf -n 1)"
+	# Send title to tmpfile
+	printf "%s" "$track" > "$tmpd/track"
+	# Prevent mpv from showing any thumbnails with --no-video
+	mpv --no-video "$track"
+done

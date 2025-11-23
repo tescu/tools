@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Companion script for mpl
+shopt -s globstar
+
+# Print error and exit with err code
+err() { printf "%s\n" "$2"; exit $1; }
+
+if [ -d /tmp/mpl* ]; then
+	# Find temp dir
+	tmpd="$(find /tmp -type d -name 'mpl*')"
+	# Get id
+	mplid="$tmpd/pid"
+	# Get track
+	mptrack="$tmpd/track"
+else
+	err 1 '[music off]'
+fi
+
+case "$1" in
+	[iI]*) # Info
+		echo "$mplid"
+		cat "$mptrack"
+		;;
+	[sS][kK]*) # Skip track
+		# TODO: Only terminate mpv session associated with mpl
+		killall mpv
+		;;
+	[sS][tT]*) # Stop player
+		printf "%s\n" 'stoping mpl...'
+		kill "$mplid"
+		;;
+	[cC]*) # Clean
+		rm -rv "$tmpd"
+		;;
+	*)
+		err 2 "usage: $(basename $0) [command]"
+		;;
+esac
