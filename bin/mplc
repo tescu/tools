@@ -9,7 +9,7 @@ if [ -d /tmp/mpl* ]; then
 	# Find temp dir
 	tmpd="$(find /tmp -type d -name 'mpl*')"
 	# Get id
-	mplid="$tmpd/pid"
+	mplid="$(cat $tmpd/pid)"
 	# Get track
 	mptrack="$tmpd/track"
 else
@@ -26,7 +26,8 @@ case "$1" in
 		killall mpv
 		;;
 	[sS][tT]*) # Stop player
-		printf "%s\n" 'stoping mpl...'
+		printf "%s\n" 'stopping mpl...'
+		killall mpv
 		kill "$mplid"
 		;;
 	[cC]*) # Clean

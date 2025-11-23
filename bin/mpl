@@ -19,7 +19,7 @@ cleanup() {
 	exit 0
 }
 # Run cleanup when terminated
-trap cleanup SIGTERM EXIT
+trap cleanup SIGINT SIGTERM EXIT
 
 while true; do
 	# Find all music files ending in .mp3 or .m4a, then choose one at random
