@@ -1,0 +1,3 @@
+#!/bin/sh
+# In case I forget a keybind
+grep bindsym $HOME/.config/sway/config | wmenu -l 30

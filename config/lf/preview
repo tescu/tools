@@ -1,0 +1,42 @@
+#!/bin/sh
+# preview script for gokcehan's lf file manager
+
+# requirements:
+# file chafa pdftoppm lesspipe
+
+# mkdir -p ~/.cache/lf && mkdir -p ~/.config/lf
+
+
+image() {
+	if [ -n "$WT_SESSION" ] || [ -n "$TMUX" ]; then
+		chafa -f symbols -s "$2x$3" --animate off --polite on "$1"
+	else
+		chafa -f sixels -s "$2x$3" --animate off --polite on "$1"
+	fi
+}
+
+# cpbotha's simplified version
+CACHE="$HOME/.cache/lf/thumbnail.$(sha256sum "$1" | awk '{print $1}')"
+
+case "$(file -Lb --mime-type -- "$1")" in
+	image/*)
+		image "$1" "$2" "$3" "$4" "$5"
+		exit 1
+		;;
+	application/pdf)
+		[ ! -f "${CACHE}.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
+		;;
+	text/*|application/json)
+        	cat "$1"
+	;;
+	video/*)
+        	[ ! -f "${CACHE}.jpg" ] && ffmpegthumbnailer -i "$1" -o "${CACHE}.jpg"
+		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
+	;;
+	*)
+		#file -b "$1"
+		lesspipe "$1" || cat "$1" || echo "lesspipe not installed or could not open file"
+	;;
+esac
+

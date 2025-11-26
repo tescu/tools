@@ -1,0 +1,8 @@
+set ifs "\n"
+set autoquit true
+set incsearch
+
+set sixel true
+set previewer '~/.config/lf/preview'
+
+map D delete

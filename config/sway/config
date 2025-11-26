@@ -36,8 +36,8 @@ input "type:touchpad" {
 
 ### Key bindings
 floating_modifier $mod normal
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c kill
+bindsym $mod+Shift+r reload
 
 bindsym $mod+d exec $menu
 bindsym $mod+Return exec $term
@@ -100,9 +100,10 @@ mode "gaps" {
 	bindsym $down gaps inner all minus 5
 
 	bindsym q mode default
+	bindsym Escape mode default
 	bindsym Return mode default
 }
-bindsym $mod+Semicolon mode "gaps"
+bindsym $mod+Shift+g mode "gaps"
 
 # Theme (border, bg, text, ind., border 2)
 client.focused          $bg $bg $fg $hl $br

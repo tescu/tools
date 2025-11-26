@@ -73,6 +73,12 @@ fi
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Aliases
+# Autocd with lf
+lfcd () {
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}
+alias lf='lfcd'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
