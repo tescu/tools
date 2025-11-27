@@ -9,6 +9,7 @@ cp -rv ~/.config/sway ./config/
 cp -rv ~/.config/foot ./config/
 cp -rv ~/.config/lf ./config/
 cp -rv ~/.config/fnott ./config/
+cp -rv ~/.config/i3blocks ./config/
 #cp -v ~/.config/user-dirs.dirs ./config/
 
 cp -v ~/.bashrc ./bashrc

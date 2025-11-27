@@ -1,0 +1,65 @@
+#!/usr/bin/env lua
+-- Display a random psalm in the terminal, in Romanian.
+-- Needs the psalm.tsv file in $HOME/.local/etc/psalm.tsv
+
+math.randomseed(os.time())
+-- Quit if we cannot find HOME
+if not os.getenv('HOME') then
+	error('Cannot access $HOME! Check your file permisions.')
+end
+
+-- Location for bible tsv
+local filename = os.getenv('HOME')..'/.local/etc/psalmi.tsv'
+
+-- Read and parse the tsv file
+local function readtsv(filename)
+	local data = {}
+	local i=1
+	
+	-- Open the file for reading
+	local file = io.open(filename, "r")
+	if not file then
+		error("Could not open "..filename)
+	end
+	
+	-- Read each line in the file
+	for line in file:lines() do
+		local fields = {}
+		for field in line:gmatch("([^\t]+)") do
+			table.insert(fields, field)
+		end
+		-- I probably could optimize this but it works
+		data[i] = {}
+		data[i].name = fields[1]
+		data[i].book = fields[2]
+		data[i].chapt = fields[3]
+		data[i].verse = fields[4]
+		i=i+1
+	end
+	i=_
+	
+	-- Close the file
+	file:close()
+	return data
+end
+
+local display = function(bible, nr)
+	print('\tPsalmul '..nr)
+	local i=1
+	
+	-- Get the line at which the psalm starts
+	while tonumber(bible[i].book) < nr do 
+		i=i+1
+	end
+	--print(i)
+	
+	-- Loop through the entire psalm
+	while tonumber(bible[i].book) < nr+1 do
+		print(bible[i].chapt..': '..bible[i].verse)
+		i=i+1
+	end
+	i=_
+end
+
+display(readtsv(filename), math.random(1, 151))
+

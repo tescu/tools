@@ -104,6 +104,10 @@ bindsym $mod+0 exec $scripts/wpmenu
 # Mounting
 bindsym $mod+m exec $term -a $fzf $scripts/mounter
 bindsym $mod+Shift+m exec $term -a $fzf $scripts/unmounter
+# Emoji/Symbols
+bindsym $mod+w exec $scripts/pickerm
+bindsym $mod+Shift+w exec $scripts/pickerm lenny
+
 # Gaps
 mode "gaps" {
 	bindsym $up gaps inner all plus 5
