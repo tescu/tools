@@ -9,6 +9,7 @@ set $right l
 set $term foot
 set $menu wmenu-run
 set $scripts $HOME/.local/bin
+set $fzf footfzf
 # Colors
 set $fg #ffffff
 set $bg #000000
@@ -26,7 +27,7 @@ output * bg $HOME/.local/etc/wall fill
 #	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 #	before-sleep 'swaylock -f -c 000000'
 
-### Input configuration
+# Input configuration
 input "type:touchpad" {
     dwt enabled
     tap enabled
@@ -34,7 +35,11 @@ input "type:touchpad" {
     middle_emulation enabled
 }
 
-### Key bindings
+# Rules
+# Make all fzf windows behave more like dmenu
+for_window { [app_id="$fzf"]  floating enable; border none }
+
+# Key bindings
 floating_modifier $mod normal
 bindsym $mod+Shift+c kill
 bindsym $mod+Shift+r reload
@@ -91,9 +96,14 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Screenshots
 bindsym Print exec grim
+bindsym $mod+9 exec grim
+bindsym $mod+8 exec grim -g "$(slurp)"
 # Wallpaper
 bindsym $mod+0 exec $scripts/wpmenu
 #bindsym $mod+9 exec $scripts/wpset
+# Mounting
+bindsym $mod+m exec $term -a $fzf $scripts/mounter
+bindsym $mod+Shift+m exec $term -a $fzf $scripts/unmounter
 # Gaps
 mode "gaps" {
 	bindsym $up gaps inner all plus 5
