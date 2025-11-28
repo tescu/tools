@@ -83,6 +83,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
+alias e='esrc'
 
 # Path
 export PATH="$PATH:$HOME/.local/bin"

@@ -24,6 +24,7 @@ trap cleanup SIGINT SIGTERM EXIT
 while true; do
 	# Find all music files ending in .mp3 or .m4a, then choose one at random
 	track="$(find . -type f -name '*.mp3' -o -name '*.m4a' | shuf -n 1)"
+	printf "\v%s\n" "$track"
 	# Send title to tmpfile
 	printf "%s" "$track" > "$tmpd/track"
 	# Prevent mpv from showing any thumbnails with --no-video

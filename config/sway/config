@@ -34,10 +34,14 @@ input "type:touchpad" {
     natural_scroll enabled
     middle_emulation enabled
 }
+input * {
+    xkb_layout "ro,de,ru"
+    xkb_options "grp:win_space_toggle"
+}
 
 # Rules
-# Make all fzf windows behave more like dmenu
-for_window { [app_id="$fzf"]  floating enable; border none }
+# Make all fzf/input terminal windows behave more like dmenu
+for_window [app_id="$fzf"] floating enable; border none
 
 # Key bindings
 floating_modifier $mod normal
@@ -107,6 +111,9 @@ bindsym $mod+Shift+m exec $term -a $fzf $scripts/unmounter
 # Emoji/Symbols
 bindsym $mod+w exec $scripts/pickerm
 bindsym $mod+Shift+w exec $scripts/pickerm lenny
+# Music
+bindsym $mod+s exec $scripts/mplc sk && notify-send '🎵' 'Skipped track.'
+bindsym $mod+Shift+s exec $scripts/mplc st && notify-send '🛑🎵' 'Music stopped.'
 
 # Gaps
 mode "gaps" {
@@ -137,5 +144,8 @@ bar {
         inactive_workspace $bg $bg $gr
     }
 }
+
+# Autostart
+exec fnott
 
 include /etc/sway/config.d/*

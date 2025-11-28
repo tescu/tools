@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# pfetch-like script
+shopt -s globstar
+
+[ -z "$TERMINAL" ] && term="$TERM" || term="$TERMINAL"
+mem="$(free -h | sed '2q;d' | awk '{print($2,"/",$3)}')"
+cpu="$(lscpu | grep 'Model name:' | awk '{$1=$2=$3=""; print $0}')"
+os="$(grep '^ID=' /etc/*-release | sed 's/..=//')"
+upt="$(uptime | awk '{print $3}')"
+disk="$(df -lh / | tail -n 1 | awk '{print $5}')"
+[ -z "$XDG_SESSION_TYPE" ] && scr='tty' || scr="$XDG_SESSION_TYPE"
+
+echo -e "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \e[32m$USER\e[m@\e[33m$HOSTNAME\e[m"
+echo "⣿⣿⣿⣿⣿⠉⠻⣿⣿⣿⣿⣿⣿⠏⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ---------------"
+echo "⣿⣿⣿⣿⣿⠀⠀⠈⠉⠉⠉⠉⠋⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ "
+echo -e "⣿⣿⣿⠟⢁⠀⠀⣀⣀⣤⣤⣤⣀⣀⠀⠀⠀⠙⠻⣿⣿⣿⣿⣿⠿⠿⣿⣿⣿⣿ \e[31mos\e[m    $os"
+echo -e "⣿⣿⢣⡾⠃⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣷⠆⠀⠀⠈⠻⣏⠁⠀⣠⣾⣿⣿⣿⣿ \e[31mkern\e[m  $(uname -sr)"
+echo -e "⣿⣿⣿⠃⠀⣶⣶⣤⣿⣿⣿⣿⣿⣿⣿⣿⢀⣴⣶⣶⣦⣈⠂⠀⠻⣿⣿⣿⣿⣿ \e[31mterm\e[m  $term"
+echo -e "⣿⣿⡟⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠙⢿⣿⡿⣿ \e[31mcpu\e[m$cpu"
+echo -e "⣿⣿⡧⠀⠀⠀⠘⢿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⢰⣿ \e[31mscr\e[m   $scr"
+echo -e "⣿⡿⠃⢀⡀⠀⠀⠀⠙⠋⠁⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⣿⣿ \e[31mram\e[m   $mem"
+echo -e "⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⡇⠀⢻⣿ \e[31mdisk\e[m  $disk"
+echo -e "⣿⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠉⠛⠿⢿⣿⣿⠏⠀⢿⣿⣿⣿⣿⠃⠀⣿⣿ \e[31mup\e[m    $upt"
+echo "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⠄⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠈⠉⠉⠰⠋⠀⠈⢿⣿"
+echo -e "⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣤⣶⣦⣤⣀⡀⠀⠀⠀⠀⠀⠀⢀⣠⣴⣿⣶⣼⣿ \tin patientia vestra"
+echo -e "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣇⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \t\tpossidebitis animas vestras."
+echo "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿"
+

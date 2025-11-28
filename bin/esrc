@@ -1,0 +1,17 @@
+#!/bin/sh
+# Edit the source of shell scripts in your PATH directly
+
+[ -z "$1" ] && exit 1
+[ -z "$EDITOR" ] && EDITOR='vim'
+
+program=`printf "%s" "$(whereis $1)" | awk '{ printf($2) }'`
+
+# Also make sure it is text/x-* (executable text file)
+case "$(file -Lb --mime-type $program)" in
+	text/x-*)
+		$EDITOR "$program"
+		;;
+	*)
+		printf "%s\n" "File is not a shellscript!"
+		exit 1
+esac

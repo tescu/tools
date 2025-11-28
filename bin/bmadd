@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Get output from wl-paste, and make sure it's only one line
+bm="$(wl-paste | head -n 1)"
+file="$HOME/.local/etc/bmarks"
+
+[ -f "$file" ] || exit 1
+
+if grep -q "^$bm$" "$file"; then
+	notify-send 'Oops!' 'Bookmark already exists!'
+else
+	notify-send 'Bookmark added!' "$bm"
+	echo "$bm" >> "$file"
+fi
+
