@@ -23,7 +23,7 @@ installcfg() {
 	cp -rv ./bin ~/.local/bin
 	cp -rv ./etc ~/.local/etc 
 	
-	cp -rvi ~/.config/* ./config/
+	cp -rvi ./config/* ~/.config/
 
 	cp -vi ./bashrc ~/.bashrc
 	cp -v ./bash_profile ~/.bash_profile
