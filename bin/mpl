@@ -27,6 +27,7 @@ while true; do
 	printf "\v%s\n" "$track"
 	# Send title to tmpfile
 	printf "%s" "$track" > "$tmpd/track"
+	pkill -RTMIN+14 i3blocks
 	# Prevent mpv from showing any thumbnails with --no-video
 	mpv --no-video "$track"
 done

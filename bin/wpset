@@ -4,8 +4,10 @@ image="$(find $HOME/pix/fundal -type f | nsxiv -ito | tail -n 1)"
 
 [ -z "$image" ] && exit 1
 
+mv "$image" ~/.local/etc/wall || exit 1
+
 if pgrep -x swaybg; then
 	killall swaybg
 	setsid -f swaybg -m fill -i "$image"
-	notify-send "$image" "Fundal temporar setat."
+	notify-send "$image" "Fundal setat."
 fi

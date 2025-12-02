@@ -11,11 +11,11 @@ set $menu wmenu-run
 set $scripts $HOME/.local/bin
 set $fzf footfzf
 # Colors
-set $fg #ffffff
-set $bg #000000
-set $gr #7a7a7a
-set $br #36af4390
-set $hl #36af43
+set $fg #fce8c3
+set $bg #1c1b19
+set $gr #918175
+set $br #519f5090
+set $hl #98bc37
 
 gaps inner 0
 gaps outer 0
@@ -142,7 +142,7 @@ bar {
     colors {
         statusline $fg
         background $bg
-	focused_workspace  $hl $hl $fg
+	focused_workspace  $hl $hl $bg
         inactive_workspace $bg $bg $gr
     }
 }

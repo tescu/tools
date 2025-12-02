@@ -24,11 +24,15 @@ case "$1" in
 	[sS][kK]*) # Skip track
 		# TODO: Only terminate mpv session associated with mpl
 		killall mpv
+		# Send signal to i3blocks
+		pkill -RTMIN+14 i3blocks
 		;;
 	[sS][tT]*) # Stop player
 		printf "%s\n" 'stopping mpl...'
 		killall mpv
 		kill "$mplid"
+		# Send signal to i3blocks
+		pkill -RTMIN+14 i3blocks
 		;;
 	[cC]*) # Clean
 		rm -rv "$tmpd"
