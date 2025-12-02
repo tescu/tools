@@ -35,8 +35,8 @@ input "type:touchpad" {
     middle_emulation enabled
 }
 input * {
-    xkb_layout "ro,de,ru"
-    xkb_options "grp:win_space_toggle"
+    xkb_layout "ro,de"
+    xkb_options "grp:rctrl_toggle"
 }
 
 # Rules
@@ -53,6 +53,8 @@ bindsym $mod+Return exec $term
 
 # Exit session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Terminati sesiunea?' -B 'Da' 'swaymsg exit'
+# Turn off
+bindsym $mod+Shift+q exec $term -a $fzf $scripts/pwroff
 
 # Moving
 bindsym $mod+$left focus left
@@ -104,7 +106,7 @@ bindsym $mod+9 exec grim
 bindsym $mod+8 exec grim -g "$(slurp)"
 # Wallpaper
 bindsym $mod+0 exec $scripts/wpmenu
-#bindsym $mod+9 exec $scripts/wpset
+#bindsym $mod+Shift+9 exec $scripts/wpset
 # Mounting
 bindsym $mod+m exec $term -a $fzf $scripts/mounter
 bindsym $mod+Shift+m exec $term -a $fzf $scripts/unmounter

@@ -1,0 +1,15 @@
+#!/bin/sh
+# Simple script to turn off computer
+# TODO: Reboot option/more options?
+#
+# Get a yes/no answer in a more graphical way
+ans="$(printf '%s\n%s\n' 'no' 'yes' | fzf --prompt='Opriți sistemul? (y/n)')"
+
+case "$ans" in
+	yes)
+		# May ask for password depending on system configuration, but
+		# since it's running inside a terminal, this won't be an issue
+		sudo shutdown -h now;;
+	*)
+		exit 1;;
+esac
