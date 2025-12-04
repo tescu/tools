@@ -7,7 +7,7 @@ Configuration files and other utilities I have written for convenience.
 
 ### dependencies
 
-* main: sway, swaybg, wmenu, foot, i3blocks, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send)
+* main: sway, swaybg, wofi, foot, i3blocks, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send)
 
 * extra: mpv, nsxiv, lf, img2sixel, chara
 

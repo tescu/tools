@@ -7,7 +7,7 @@ set $down j
 set $up k
 set $right l
 set $term foot
-set $menu wmenu-run
+set $menu wofi --show drun
 set $scripts $HOME/.local/bin
 set $fzf footfzf
 # Colors
