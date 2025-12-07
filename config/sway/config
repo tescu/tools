@@ -53,6 +53,7 @@ bindsym $mod+Return exec $term
 
 # Exit session
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Terminati sesiunea?' -B 'Da' 'swaymsg exit'
+bindsym $mod+e exec swaylock -c '#000000'
 # Turn off
 bindsym $mod+Shift+q exec $term -a $fzf $scripts/pwroff
 
