@@ -35,7 +35,8 @@ input "type:touchpad" {
     middle_emulation enabled
 }
 input * {
-    xkb_layout "ro,de"
+    xkb_layout "ro,ru"
+    xkb_variant ",phonetic"
     xkb_options "grp:rctrl_toggle"
 }
 
