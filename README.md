@@ -7,7 +7,7 @@ Configuration files and other utilities I have written for convenience.
 
 ### dependencies
 
-* main: sway, swaybg, wofi, foot, i3blocks, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send)
+* main: labwc, swaybg, wofi, foot, waybar, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send), wlopm
 
 * extra: mpv, nsxiv, lf, img2sixel, chara
 
@@ -48,8 +48,3 @@ Some scripts you may find interesting/cool are:
 
 ### license
 GPLv3 unless otherwise mentioned
-
-### why sway over i3wm?
-
-```¯\_( ͡° ͜ʖ ͡°)_/¯``` it just werks
-

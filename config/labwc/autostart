@@ -1,0 +1,15 @@
+# autostart file
+swaybg -i ~/.local/etc/wall &
+
+# panel
+waybar --log-level off >/dev/null 2>&1 &
+
+# notifications
+fnott >/dev/null 2>&1 &
+
+# Lock screen after 5 minutes; turn off display after another 5 minutes.
+swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'wlopm --off \*' \
+	resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &

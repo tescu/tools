@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<!-- For a complete set of options with comments, see docs/rc.xml.all -->
+<labwc_config>
+<core>
+	<decoration>server</decoration>
+	<gap>0</gap>
+	<adaptiveSync>no</adaptiveSync>
+	<reuseOutputMode>yes</reuseOutputMode>
+</core>
+<theme>
+	<font name="Sans" size="10" />
+	<cornerRadius>0</cornerRadius>
+	<dropShadows>yes</dropShadows>
+	<titlebar>
+		<layout>iconify,max:close</layout>
+	</titlebar>
+</theme>
+<placement>
+	<policy>Center</policy>
+</placement>
+<desktops>
+	<popupTime>1000</popupTime>
+	<number>5</number>
+	<prefix>birou nr.</prefix>
+</desktops>
+<regions>
+	<region name="top" x="0%" y="0%" height="50%" width="100%"/>
+	<region name="bottom" x="0%" y="50%" height="50%" width="100%"/>
+	<region name="left" x="0%" y="0%" height="100%" width="50%"/>
+	<region name="right" x="50%" y="0%" height="100%" width="50%"/>
+	<region name="center" x="10%" y="10%" height="80%" width="80%"/>
+</regions>
+<keyboard>
+    <default />
+    <!-- General -->
+    <keybind key="W-Return">
+	    <action name="Execute" command="foot"/></keybind>
+    <keybind key="W-a">
+	    <action name="ShowMenu" menu="root-menu"/></keybind>
+    <keybind key="W-x">
+	    <action name="ToggleDecorations"/></keybind>
+    <keybind key="W-f">
+	    <action name="ToggleFullscreen"/></keybind>
+    <keybind key="W-d">
+	    <action name="Execute" command="wofi --show drun" /></keybind>
+    <keybind key="W-e">
+	    <action name="Execute" command="thunar" /></keybind>
+    <keybind key="W-S-c">
+	    <action name="Close" /></keybind>
+    <keybind key="W-S-r">
+	    <action name="Reconfigure" /></keybind>
+    <!-- Extra -->
+    <keybind key="W-w">
+	    <action name="Execute" command="~/.local/bin/pickerm"/></keybind>
+    <keybind key="W-S-w">
+	    <action name="Execute" command="~/.local/bin/pickerm lenny"/></keybind>
+    <keybind key="W-m">
+	    <action name="Execute" command="foot ~/.local/bin/mounter"/></keybind>
+    <keybind key="W-S-m">
+	    <action name="Execute" command="foot ~/.local/bin/unmounter"/></keybind>
+    <keybind key="W-p">
+	    <action name="Execute" command="grim"/></keybind>
+    <keybind key="W-S-p">
+	    <action name="Execute" command="~/.local/bin/capt"/></keybind>
+    <keybind key="W-o">
+	    <action name="Execute" command="foot ~/.local/bin/wpmenu"/></keybind>
+    <!-- Regions and directions -->
+    <keybind key="W-k">
+	    <action name="SnapToRegion" region="top"/></keybind>
+    <keybind key="W-h">
+	    <action name="SnapToRegion" region="left"/></keybind>
+    <keybind key="W-l">
+	    <action name="SnapToRegion" region="right"/></keybind>
+    <keybind key="W-j">
+	    <action name="SnapToRegion" region="bottom"/></keybind>
+    <keybind key="W-Space">
+	    <action name="SnapToRegion" region="center"/></keybind>
+    <keybind key="A-k">
+	    <action name="MoveToEdge" direction="up"/></keybind>
+    <keybind key="A-h">
+	    <action name="MoveToEdge" direction="left"/></keybind>
+    <keybind key="A-l">
+	    <action name="MoveToEdge" direction="right"/></keybind>
+    <keybind key="A-j">
+	    <action name="MoveToEdge" direction="down"/></keybind>
+    <!-- Desktops -->
+    <keybind key="W-1">
+	    <action name="GoToDesktop" to="1"/></keybind>
+    <keybind key="W-2">
+	    <action name="GoToDesktop" to="2"/></keybind>
+    <keybind key="W-3">
+	    <action name="GoToDesktop" to="3"/></keybind>
+    <keybind key="W-4">
+	    <action name="GoToDesktop" to="4"/></keybind>
+    <keybind key="W-5">
+	    <action name="GoToDesktop" to="5"/></keybind>
+    <keybind key="W-S-1">
+	    <action name="SendToDesktop" to="1"/></keybind>
+    <keybind key="W-S-2">
+	    <action name="SendToDesktop" to="2"/></keybind>
+    <keybind key="W-S-3">
+	    <action name="SendToDesktop" to="3"/></keybind>
+    <keybind key="W-S-4">
+	    <action name="SendToDesktop" to="4"/></keybind>
+    <keybind key="W-S-5">
+	    <action name="SendToDesktop" to="5"/></keybind>
+    <!--Remove a previously defined keybind-->
+    <keybind key="W-F4"><action name="None" /></keybind>
+  </keyboard>
+  <!--Keep default mouse settings-->
+  <mouse><default /></mouse>
+  <libinput>
+	  <device>
+		  <naturalScroll>no</naturalScroll>
+		  <disableWhileTyping>yes</disableWhileTyping>
+	  </device>
+  </libinput>
+</labwc_config>

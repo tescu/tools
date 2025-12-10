@@ -1,0 +1,3 @@
+#!/bin/sh
+# TODO: More options, filenames
+grim -g "$(slurp)" && notify-send 'Captură realizată'

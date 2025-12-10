@@ -12,4 +12,4 @@ choose=$(cut -d ';' -f1 "$file" | wofi -d -i -L 10 | sed "s/\t.*//")
 
 [ -z "$choose" ] && exit
 
-printf "%s\n" "$choose" | wl-copy && notify-send "$choose" 'Simbol copiat.'
+printf "%s" "$choose" | wl-copy && notify-send "$choose" 'Simbol copiat.'

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu>
+<menu id="root-menu">
+  <menu id="custom-apps" label="programe">
+    <item label="firefox"><action name="Execute" command="firefox" /></item>
+    <item label="terminal"><action name="Execute" command="kitty" /></item>
+    <item label="fișiere"><action name="Execute" command="thunar" /></item>
+    <separator />
+    <item label="mupdf"><action name="Execute" command="mupdf" /></item>
+  </menu>
+  <separator />
+  <menu id="system-apps" label="sistem">
+    <item label="temă"><action name="Execute" command="labwc-tweaks" /></item>
+  </menu>
+  <separator />
+  <menu id="power-menu" label="computer" >
+    <item label="repornește">
+      <action name="Execute" command="systemctl -i reboot" />
+    </item>
+     <item label="oprește">
+      <action name="Execute" command="systemctl -i poweroff" />
+    </item>
+    <item label="ieși">
+      <action name="Exit" />
+      <prompt>da</prompt>
+    </item>
+  </menu>
+  <separator />
+  <item label="reconfigurare">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+</openbox_menu>
