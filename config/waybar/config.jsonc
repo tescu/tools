@@ -54,7 +54,7 @@
         "format-charging": "🌩️{capacity}%",
         "format-plugged": "🔌{capacity}%",
         "format-alt": "{icon} {time}",
-        "format-icons": ["❗" ,"🪫", "🔋"]
+        "format-icons": ["❗" ,"🪫", "🔋", "🔋"]
     },
     "battery#bat2": {
         "bat": "BAT2"

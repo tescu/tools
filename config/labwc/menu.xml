@@ -3,22 +3,25 @@
 <menu id="root-menu">
   <menu id="custom-apps" label="programe">
     <item label="firefox"><action name="Execute" command="firefox" /></item>
-    <item label="terminal"><action name="Execute" command="kitty" /></item>
+    <item label="terminal"><action name="Execute" command="foot" /></item>
     <item label="fișiere"><action name="Execute" command="thunar" /></item>
     <separator />
     <item label="mupdf"><action name="Execute" command="mupdf" /></item>
   </menu>
-  <separator />
+  <separator/>
   <menu id="system-apps" label="sistem">
     <item label="temă"><action name="Execute" command="labwc-tweaks" /></item>
   </menu>
-  <separator />
+  <separator/>
   <menu id="power-menu" label="computer" >
     <item label="repornește">
-      <action name="Execute" command="systemctl -i reboot" />
+      <action name="Execute" command="systemctl -i reboot"/>
     </item>
-     <item label="oprește">
-      <action name="Execute" command="systemctl -i poweroff" />
+    <item label="oprește">
+      <action name="Execute" command="systemctl -i poweroff"/>
+    </item>
+    <item label="powermenu">
+      <action name="Execute" command="foot ~/.local/bin/pwroff"/>
     </item>
     <item label="ieși">
       <action name="Exit" />

@@ -79,7 +79,7 @@ lfcd () {
     cd "$(command lf -print-last-dir "$@")"
 }
 alias lf='lfcd'
-alias ll='ls -l'
+alias ll='ls -gh'
 alias la='ls -A'
 alias l='ls -CF'
 alias c='clear'
