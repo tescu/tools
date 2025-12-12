@@ -4,8 +4,8 @@
 }
 
 window#waybar {
-    background-color: #1c1b19;
-    color: #fce8c3;
+    background-color: #f5f7ee;
+    color: #14100d;
 }
 
 window#waybar.hidden {
@@ -48,7 +48,7 @@ button:hover {
 #custom-mplc,
 #tray {
     padding: 0 10px;
-    color: #fce8c3;
+    color: #14100d;
 }
 
 #window { margin: 0 4px; }
@@ -100,6 +100,6 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #aaaaaa;
+    background-color: #992e2e;
 }
 

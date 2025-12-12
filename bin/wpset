@@ -4,7 +4,7 @@ image="$(find $HOME/pix/fundal -type f | nsxiv -ito | tail -n 1)"
 
 [ -z "$image" ] && exit 1
 
-mv "$image" ~/.local/etc/wall || exit 1
+cp "$image" ~/.local/etc/wall || exit 1
 
 if pgrep -x swaybg; then
 	killall swaybg

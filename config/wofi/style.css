@@ -1,29 +1,29 @@
 #window {
-	background-color: #1c1b19;
-	color: #fce8c3;
+	background-color: #f5f7ee;
+	color: #14100d;
+	border: 2px solid #918175;
 	border-radius: 0rem;
-	/*border: 2px solid #98bc37;*/
 	font-size: 1.4rem;
 }
 #input {
-	background-color: #1c1b19;
+	background-color: #f5f7ee;
 	color: #918175;
-	border-radius: 0;
 	border: 1px solid #918175;
+	border-radius: 0;
 }
 #input:focus, #input:focus-visible, #input:active {
-	border: 1px solid #98bc37;
+	border: 1px solid #918175;
 }
 #scroll {}
 #entry {
-	background-color: #1c1b19;
+	background-color: #f5f7ee;
 	color: #918175;
 }
 #entry:selected {
-	background-color: #1c1b19;
-	color: #fce8c3;
+	background-color: #f5f7ee;
+	color: #14100d;
 }
 #text:selected {
-	color: #fce8c3;
+	color: #14100d;
 	font-weight: 700;
 }

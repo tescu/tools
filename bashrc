@@ -81,6 +81,7 @@ lfcd () {
 alias lf='lfcd'
 alias ll='ls -gh'
 alias la='ls -A'
+alias dir='ls -CF --color=never'
 alias l='ls -CF'
 alias c='clear'
 alias e='esrc'

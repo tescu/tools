@@ -6,24 +6,29 @@
     <item label="terminal"><action name="Execute" command="foot" /></item>
     <item label="fișiere"><action name="Execute" command="thunar" /></item>
     <separator />
-    <item label="mupdf"><action name="Execute" command="mupdf" /></item>
+    <item label="grsync"><action name="Execute" command="grsync" /></item>
+    <item label="netsurf"><action name="Execute" command="netsurf-gtk" /></item>
   </menu>
   <separator/>
   <menu id="system-apps" label="sistem">
-    <item label="temă"><action name="Execute" command="labwc-tweaks" /></item>
+    <item label="🌇 fundal"><action name="Execute" command="foot ~/.local/bin/wpmenu" /></item>
+    <item label="🎨 temă"><action name="Execute" command="labwc-tweaks" /></item>
   </menu>
   <separator/>
   <menu id="power-menu" label="computer" >
-    <item label="repornește">
+    <item label="🔒 blochează">
+      <action name="Execute" command="swaylock -c 000000"/>
+    </item>
+    <item label="🔁 repornește">
       <action name="Execute" command="systemctl -i reboot"/>
     </item>
-    <item label="oprește">
+    <item label="⏹️ oprește">
       <action name="Execute" command="systemctl -i poweroff"/>
     </item>
-    <item label="powermenu">
+    <item label="🖥️ opțiuni">
       <action name="Execute" command="foot ~/.local/bin/pwroff"/>
     </item>
-    <item label="ieși">
+    <item label="🚪 ieși">
       <action name="Exit" />
       <prompt>da</prompt>
     </item>

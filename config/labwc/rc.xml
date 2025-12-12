@@ -64,6 +64,10 @@
 	    <action name="Execute" command="~/.local/bin/capt"/></keybind>
     <keybind key="W-o">
 	    <action name="Execute" command="foot ~/.local/bin/wpmenu"/></keybind>
+    <keybind key="W-s">
+	    <action name="Execute" command="~/.local/bin/mplc sk"/></keybind>
+    <keybind key="W-S-s">
+	    <action name="Execute" command="~/.local/bin/mplc st"/></keybind>
     <!-- Regions and directions -->
     <keybind key="W-k">
 	    <action name="SnapToRegion" region="top"/></keybind>

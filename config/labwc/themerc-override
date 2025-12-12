@@ -9,32 +9,32 @@ window.titlebar.padding.width: 0
 window.titlebar.padding.height: 0
 
 # window border
-window.active.border.color: #aaaaaa80
-window.inactive.border.color: #1c1b19
+window.active.border.color: #91817580
+window.inactive.border.color: #f5f7ee
 
 # ToggleKeybinds status indicator
 window.active.indicator.toggled-keybind.color: #ff0000
 
 # window titlebar background
-window.active.title.bg.color: #1c1b19
-window.inactive.title.bg.color: #1c1b19
+window.active.title.bg.color: #f5f7ee
+window.inactive.title.bg.color: #f5f7ee
 
 # window titlebar text
-window.active.label.text.color: #fce8c3
-window.inactive.label.text.color: #918175
+window.active.label.text.color: #918175
+window.inactive.label.text.color: #a5a79a
 window.label.text.justify: center
 
 # window button width and spacing
 window.button.width: 26
 window.button.height: 26
-window.button.spacing: 0
+window.button.spacing: 2
 
 # window button hover effect
 window.button.hover.bg.corner-radius: 0
 
 # window buttons
-window.active.button.unpressed.image.color: #fce8c3
-window.inactive.button.unpressed.image.color: #918175
+window.active.button.unpressed.image.color: #918175
+window.inactive.button.unpressed.image.color: #a5a79a
 
 # window drop-shadows
 window.active.shadow.size: 60
@@ -53,33 +53,33 @@ menu.overlap.y: 0
 menu.width.min: 20
 menu.width.max: 200
 menu.border.width: 3
-menu.border.color: #aaaaaa80
-menu.items.bg.color: #1c1b19
-menu.items.text.color: #fce8c3
-menu.items.active.bg.color: #1c1b19
-menu.items.active.text.color: #519f50
+menu.border.color: #91817580
+menu.items.bg.color: #f5f7ee
+menu.items.text.color: #14100d
+menu.items.active.bg.color: #918175
+menu.items.active.text.color: #f5f7ee
 menu.items.padding.x: 7
 menu.items.padding.y: 4
 menu.separator.width: 1
 menu.separator.padding.width: 0
 menu.separator.padding.height: 3
-menu.separator.color: #aaaaaa80
-menu.title.bg.color: #1c1b19
-menu.title.text.color: #fce8c3
+menu.separator.color: #91817580
+menu.title.bg.color: #f5f7ee
+menu.title.text.color: #14100d
 menu.title.text.justify: Left
 
 # on screen display (window-cycle dialog)
-osd.bg.color: #1c1b19
-osd.border.color: #aaaaaa80
+osd.bg.color: #f5f7ee
+osd.border.color: #91817580
 osd.border.width: 3
-osd.label.text.color: #fce8c3
+osd.label.text.color: #14100d
 osd.window-switcher.width: 600
 osd.window-switcher.padding: 4
 osd.window-switcher.item.padding.x: 10
 osd.window-switcher.item.padding.y: 1
 osd.window-switcher.item.active.border.width: 2
 osd.window-switcher.preview.border.width: 1
-osd.window-switcher.preview.border.color: #98bc37,#519f50,#98bc37
+osd.window-switcher.preview.border.color: #992e2e,#992e2e,#992e2e
 # make desktop squares bigger
 osd.workspace-switcher.boxes.width: 50
 osd.workspace-switcher.boxes.height: 50
