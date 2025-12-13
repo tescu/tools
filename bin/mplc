@@ -13,7 +13,7 @@ if [ -d /tmp/mpl* ]; then
 	# Get track
 	mptrack="$tmpd/track"
 else
-	err 1 '[music off]'
+	err 1 'mpl is not running.'
 fi
 
 case "$1" in
@@ -21,18 +21,22 @@ case "$1" in
 		echo "$mplid"
 		cat "$mptrack"
 		;;
+	[tT]*) # Track name
+		if [ -f "$mptrack" ]; then
+			cat "$mptrack"
+		fi
+		;;
 	[sS][kK]*) # Skip track
 		# TODO: Only terminate mpv session associated with mpl
 		killall mpv
-		# Send signal to i3blocks
-		pkill -RTMIN+14 i3blocks
+		# Send signal to bar
+		pkill -RTMIN+14 waybar
 		;;
 	[sS][tT]*) # Stop player
 		printf "%s\n" 'stopping mpl...'
 		killall mpv
 		kill "$mplid"
-		# Send signal to i3blocks
-		pkill -RTMIN+14 i3blocks
+		pkill -RTMIN+14 waybr
 		;;
 	[cC]*) # Clean
 		rm -rv "$tmpd"

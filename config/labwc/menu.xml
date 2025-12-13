@@ -10,9 +10,10 @@
     <item label="netsurf"><action name="Execute" command="netsurf-gtk" /></item>
   </menu>
   <separator/>
-  <menu id="system-apps" label="sistem">
-    <item label="🌇 fundal"><action name="Execute" command="foot ~/.local/bin/wpmenu" /></item>
-    <item label="🎨 temă"><action name="Execute" command="labwc-tweaks" /></item>
+  <menu id="system-opts" label="sistem">
+    <item label="🌇 fundal"><action name="Execute" command="foot ~/.local/bin/wpmenu"/></item>
+    <item label="🎨 temă"><action name="Execute" command="labwc-tweaks"/></item>
+    <item label="📊 panou"><action name="Execute" command="~/.local/bin/rebar"/></item>
   </menu>
   <separator/>
   <menu id="power-menu" label="computer" >

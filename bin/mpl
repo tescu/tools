@@ -16,6 +16,7 @@ cleanup() {
 	# Remove clutter and other stuff
 	echo 'done'
 	rm -r "$tmpd"
+	pkill -RTMIN+14 waybar
 	exit 0
 }
 # Run cleanup when terminated
@@ -26,8 +27,8 @@ while true; do
 	track="$(find . -type f -name '*.mp3' -o -name '*.m4a' | shuf -n 1)"
 	printf "\v%s\n" "$track"
 	# Send title to tmpfile
-	printf "%s" "$track" > "$tmpd/track"
-	pkill -RTMIN+14 i3blocks
+	printf "%s" "$track" | sed 's/.\///' > "$tmpd/track"
+	pkill -RTMIN+14 waybar
 	# Prevent mpv from showing any thumbnails with --no-video
 	mpv --no-video "$track"
 done
