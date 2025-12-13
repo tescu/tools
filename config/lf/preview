@@ -27,6 +27,9 @@ case "$(file -Lb --mime-type -- "$1")" in
 		[ ! -f "${CACHE}.jpg" ] && pdftoppm -jpeg -f 1 -singlefile "$1" "$CACHE"
 		image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
 		;;
+	text/html*)
+		w3m -dump -cols "$2" "$1"
+	;;
 	text/*|application/json)
         	cat "$1"
 	;;
