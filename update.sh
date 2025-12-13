@@ -21,8 +21,8 @@ updatecfg() {
 
 installcfg() {
 	read -rp "WARNING! This may overwrite important files! Continue? (y/n)"
-	cp -rv ./bin ~/.local/bin
-	cp -rv ./etc ~/.local/etc 
+	cp -rv ./bin ~/.local/
+	cp -rv ./etc ~/.local/
 	
 	cp -rvi ./config/* ~/.config/
 

@@ -29,3 +29,8 @@ XCURSOR_SIZE=24
 ## then uncomment and adjust.
 XDG_CURRENT_DESKTOP=wlroots
 
+## Other exports
+export TERMINAL="foot"
+export BROWSER="firefox"
+export FILE_MANAGER="lf"
+

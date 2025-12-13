@@ -6,3 +6,6 @@ set sixel true
 set previewer '~/.config/lf/preview'
 
 map D delete
+
+map c set hidden true
+map C set hidden false
