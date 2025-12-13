@@ -2,7 +2,8 @@
 swaybg -i ~/.local/etc/wall &
 
 # panel
-waybar --log-level off >/dev/null 2>&1 &
+#waybar --log-level off >/dev/null 2>&1 &
+waybar --log-level off &
 
 # notifications
 fnott >/dev/null 2>&1 &

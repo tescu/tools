@@ -85,8 +85,10 @@
         "on-click": "pavucontrol"
     },
     "custom/mplc": {
-        "format": "{text}",
+        "format": "📻 {text}",
         "signal": 14,
-        "exec": "mplc t"
+        "exec": "$HOME/.local/bin/mplc t",
+	"on-click": "$HOME/.local/bin/mplc st",
+        "tooltip": false
     }
 }

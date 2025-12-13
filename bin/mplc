@@ -24,19 +24,20 @@ case "$1" in
 	[tT]*) # Track name
 		if [ -f "$mptrack" ]; then
 			cat "$mptrack"
+		else
+			printf '%s\n' 'music off.'
 		fi
 		;;
 	[sS][kK]*) # Skip track
 		# TODO: Only terminate mpv session associated with mpl
 		killall mpv
-		# Send signal to bar
-		pkill -RTMIN+14 waybar
+		#pkill -RTMIN+14 waybar
 		;;
 	[sS][tT]*) # Stop player
 		printf "%s\n" 'stopping mpl...'
 		killall mpv
 		kill "$mplid"
-		pkill -RTMIN+14 waybr
+		pkill -RTMIN+14 waybar
 		;;
 	[cC]*) # Clean
 		rm -rv "$tmpd"
