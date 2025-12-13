@@ -9,7 +9,7 @@ Configuration files and other utilities I have written for convenience.
 
 * main: labwc, swaybg, wofi, foot, waybar, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send), wlopm
 
-* extra: mpv, nsxiv, lf, img2sixel, chara
+* extra: mpv, nsxiv, lf, img2sixel, chara, w3m
 
 ### file structure
 
@@ -45,6 +45,8 @@ Some scripts you may find interesting/cool are:
 * `bmadd`: writes the content of your clipboard into a bookmark file
 
 * `wpmenu`: set your sway wallpaper using nsxiv
+
+* `dexcli`: gets a definition from [dex.ro](https://dex.ro) on the terminal
 
 ### license
 GPLv3 unless otherwise mentioned

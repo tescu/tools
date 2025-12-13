@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# depends: w3m, less
+
+def="$1"
+if [ -z "$def" ]; then
+	printf "%s%s%s\n" 'usage: ' "$(basename $0)" ' [definition]'
+	exit 1
+fi
+
+# I'm using sed and head to make the output a tiny bit more readable
+w3m -cols 80 -dump "https://www.dex.ro/$1" | sed '1,13d' | head -n -8 | less
