@@ -3,13 +3,13 @@
 Configuration files and other utilities I have written for convenience.
 
 ### screenshot
-![screenshot showcasing swaywm configuration](./screenshot.png)
+![screenshot showcasing labwc configuration](./screenshot.png)
 
 ### dependencies
 
 * main: labwc, swaybg, wofi, foot, waybar, fzf, brightnessctl, grim (+ slurp), fnott, libnotify-bin (notify-send), wlopm
 
-* extra: mpv, nsxiv, lf, img2sixel, chara, w3m
+* extra: mpv, nsxiv, lf, img2sixel, chara, w3m, thunar
 
 ### file structure
 
@@ -18,17 +18,39 @@ This maps to `~/.local/bin` and `~/.local/etc` on my system.
 
 ### keybinds
 
-You can see a menu popup with all the keybinds I have set by running `showbinds` (located in `bin/`). 
+M: Super key/Mod4
+A: Alt key
+S: Shift key
 
-M: Super key/Mod
-
-* M + Return: terminal 
-
-* M + Shift + C: close window
-
-* M + Shift + R: restart
-
-* M + Shift + E: quit sway
+| keybind   | action         |
+|-----------|----------------|
+| M+Return  | terminal       |
+| M+S+c     | close window   |
+| M+S+r     | restart        |
+| M+d       | programs (wofi)|
+| M+1..5    | go to desktop  |
+| M+S+1..5  | send to desktop|
+| M+a       | labwc menu     |
+| M+e       | file manager   |
+| M+f       | fullscreen     |
+| M+x       | no decorations |
+| M+o       | change wall.   |
+| M+w       | emoji menu     |
+| M+S+w     | lenny faces    |
+| M+m       | mount drives   |
+| M+S+m     | umount         |
+| M+p       | screenshot     |
+| M+S+m     | scr. region    |
+| M+s       | skip mpl track |
+| M+S+s     | stop mpl       |
+| M+h       | snap left      |
+| M+j       | snap down      |
+| M+k       | snap up        |
+| M+l       | snap right     |
+| A+h       | move left      |
+| A+j       | move down      |
+| A+k       | move up        |
+| A+l       | move right     |
 
 ### scripts
 

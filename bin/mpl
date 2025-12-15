@@ -31,4 +31,5 @@ while true; do
 	pkill -RTMIN+14 waybar
 	# Prevent mpv from showing any thumbnails with --no-video
 	mpv --no-video "$track"
+	pkill -RTMIN+14 waybar
 done
