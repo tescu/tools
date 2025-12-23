@@ -5,7 +5,7 @@
 math.randomseed(os.time())
 -- Quit if we cannot find HOME
 if not os.getenv('HOME') then
-	error('Cannot access $HOME! Check your file permisions.')
+	error('Cannot access $HOME! Check your file permisions or environment.')
 end
 
 -- Location for bible tsv
@@ -61,5 +61,11 @@ local display = function(bible, nr)
 	i=_
 end
 
-display(readtsv(filename), math.random(1, 151))
+if #arg < 1 then
+	-- Display random psalm
+	display(readtsv(filename), math.random(1, 151))
+else
+	-- Display specified psalm
+	display(readtsv(filename), tonumber(arg[1]))
+end
 
